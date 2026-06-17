@@ -1,13 +1,13 @@
 /* デザイントークン（CLAUDE.md 指定の出発点をそのまま採用） */
 :root {
-  --color-bg: #f7fbff;
+  --color-bg: #F7F8FC;
   --color-surface: #ffffff;
-  --color-surface-soft: #eef7ff;
-  --color-primary: #8ecae6;
-  --color-primary-deep: #4f9fc7;
-  --color-text: #263238;
+  --color-surface-soft: #EEF4FF;
+  --color-primary: #7FA8E8;
+  --color-primary-deep: #4A73B8;
+  --color-text: #1E2633;
   --color-text-muted: #78909c;
-  --color-border: #d8eaf4;
+  --color-border: #DCE9FF;
   --color-lavender: #d8d4f2;
   --color-mint: #cdebd6;
   --color-soft-rose: #f3d6d6;

@@ -1,0 +1,59 @@
+@import "./styles/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg text-ink font-body;
+    background-image: radial-gradient(
+      80% 50% at 88% -8%,
+      var(--color-surface-soft),
+      transparent 60%
+    );
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { @apply font-ui; }
+}
+
+/* よく使う形をまとめる（Tailwindのまま・JSXを読みやすく保つ） */
+@layer components {
+  .card {
+    @apply bg-surface border border-line rounded-card shadow-card p-5;
+  }
+  .section-title {
+    @apply font-ui text-base font-bold text-ink mb-1 flex items-center gap-2;
+  }
+  .section-sub {
+    @apply text-xs text-muted mb-4;
+  }
+  .input {
+    @apply w-full bg-bg border border-line rounded-xl px-3 py-2 text-sm text-ink;
+  }
+  .input:focus-visible {
+    @apply outline outline-2 outline-primary-deep;
+  }
+  .label {
+    @apply block text-xs text-muted font-medium mb-1;
+  }
+  .btn {
+    @apply rounded-pill px-4 py-2 text-sm font-semibold transition;
+  }
+  .btn-primary {
+    @apply btn bg-primary-deep text-white hover:brightness-105;
+  }
+  .btn-ghost {
+    @apply btn border border-line text-muted bg-transparent hover:bg-surface-soft;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-pill bg-surface-soft text-primary-deep;
+  }
+  .link-btn {
+    @apply text-xs text-muted underline hover:text-primary-deep;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

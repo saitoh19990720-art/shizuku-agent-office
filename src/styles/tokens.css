@@ -1,0 +1,18 @@
+/* デザイントークン（CLAUDE.md 指定の出発点をそのまま採用） */
+:root {
+  --color-bg: #f7fbff;
+  --color-surface: #ffffff;
+  --color-surface-soft: #eef7ff;
+  --color-primary: #8ecae6;
+  --color-primary-deep: #4f9fc7;
+  --color-text: #263238;
+  --color-text-muted: #78909c;
+  --color-border: #d8eaf4;
+  --color-lavender: #d8d4f2;
+  --color-mint: #cdebd6;
+  --color-soft-rose: #f3d6d6;
+
+  --radius-card: 20px;
+  --radius-button: 999px;
+  --shadow-card: 0 8px 24px rgba(60, 100, 130, 0.08);
+}

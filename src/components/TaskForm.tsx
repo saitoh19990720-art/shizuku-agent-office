@@ -44,6 +44,7 @@ export function TaskForm({ onAdd }: Props) {
         onChange={(e) => setTitle(e.target.value)}
         placeholder="タスクを書く（例：配色トークンを見直す）"
         aria-label="タスク名"
+        required
       />
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
         <label>

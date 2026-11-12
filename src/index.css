@@ -38,7 +38,7 @@
     @apply block text-xs text-muted font-medium mb-1;
   }
   .btn {
-    @apply rounded-pill px-4 py-2 text-sm font-semibold transition;
+    @apply rounded-pill px-4 py-2 text-sm font-semibold transition min-h-[44px];
   }
   .btn-primary {
     @apply btn bg-primary-deep text-white hover:brightness-105;
@@ -50,7 +50,11 @@
     @apply inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-pill bg-surface-soft text-primary-deep;
   }
   .link-btn {
-    @apply text-xs text-muted underline hover:text-primary-deep;
+    @apply text-xs text-muted underline hover:text-primary-deep inline-flex items-center justify-center min-h-[44px] min-w-[44px];
+  }
+  /* しぼり込み・状態切り替えの小さなボタン（指で押しやすい大きさを確保） */
+  .pill-btn {
+    @apply text-xs px-3 rounded-pill border transition min-h-[44px] min-w-[44px];
   }
 }
 

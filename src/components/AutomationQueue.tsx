@@ -47,7 +47,7 @@ export function AutomationQueue({ items, onAdd, onRemove }: Props) {
     <section className="card">
       <div className="flex items-center justify-between">
         <h2 className="section-title mb-0">⚙ 自動化キュー（準備リスト）</h2>
-        <button type="button" className="link-btn" onClick={() => setOpen((v) => !v)}>
+        <button type="button" className="link-btn" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
           {open ? "閉じる" : "＋ 追加"}
         </button>
       </div>
@@ -57,16 +57,16 @@ export function AutomationQueue({ items, onAdd, onRemove }: Props) {
 
       {open && (
         <form onSubmit={submit} className="grid gap-2 mb-4">
-          <input className="input" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="やりたい自動化 *" />
+          <input className="input" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="やりたい自動化 *" required />
           <div className="grid sm:grid-cols-2 gap-2">
             <input className="input" value={trigger} onChange={(e) => setTrigger(e.target.value)} placeholder="きっかけ（例：毎日22:50）" />
             <input className="input" value={destination} onChange={(e) => setDest(e.target.value)} placeholder="出力先（例：Obsidian）" />
             <input className="input" value={input} onChange={(e) => setInput(e.target.value)} placeholder="入力" />
             <input className="input" value={output} onChange={(e) => setOutput(e.target.value)} placeholder="出力" />
-            <select className="input" value={status} onChange={(e) => setStatus(e.target.value as AutomationItem["status"])}>
+            <select className="input" aria-label="状態" value={status} onChange={(e) => setStatus(e.target.value as AutomationItem["status"])}>
               {STATUSES.map((s) => <option key={s} value={s}>{AUTOMATION_STATUS_LABEL[s]}</option>)}
             </select>
-            <select className="input" value={riskLevel} onChange={(e) => setRisk(e.target.value as RiskLevel)}>
+            <select className="input" aria-label="危険度" value={riskLevel} onChange={(e) => setRisk(e.target.value as RiskLevel)}>
               {RISKS.map((r) => <option key={r} value={r}>危険度 {RISK_LABEL[r]}</option>)}
             </select>
           </div>

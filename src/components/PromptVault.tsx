@@ -39,7 +39,7 @@ export function PromptVault({ prompts, onAdd, onMarkUsed, onRemove }: Props) {
     <section className="card">
       <div className="flex items-center justify-between">
         <h2 className="section-title mb-0">📌 プロンプト保管庫</h2>
-        <button type="button" className="link-btn" onClick={() => setOpen((v) => !v)}>
+        <button type="button" className="link-btn" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
           {open ? "閉じる" : "＋ 追加"}
         </button>
       </div>
@@ -47,14 +47,14 @@ export function PromptVault({ prompts, onAdd, onMarkUsed, onRemove }: Props) {
 
       {open && (
         <form onSubmit={submit} className="grid gap-2 mb-4">
-          <input className="input" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="タイトル *" />
+          <input className="input" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="タイトル *" required />
           <div className="grid sm:grid-cols-2 gap-2">
-            <select className="input" value={targetTool} onChange={(e) => setTool(e.target.value as PromptItem["targetTool"])}>
+            <select className="input" aria-label="使う道具" value={targetTool} onChange={(e) => setTool(e.target.value as PromptItem["targetTool"])}>
               {TOOLS.map((t) => <option key={t} value={t}>{TOOL_LABEL[t]}</option>)}
             </select>
             <input className="input" value={category} onChange={(e) => setCategory(e.target.value)} placeholder="カテゴリ（例：UI設計）" />
           </div>
-          <textarea className="input" rows={3} value={body} onChange={(e) => setBody(e.target.value)} placeholder="プロンプト本文 *" />
+          <textarea className="input" rows={3} value={body} onChange={(e) => setBody(e.target.value)} placeholder="プロンプト本文 *" required />
           <input className="input" value={useCase} onChange={(e) => setUseCase(e.target.value)} placeholder="使いどころ（任意）" />
           <div className="flex justify-end"><button type="submit" className="btn-primary">保存</button></div>
         </form>

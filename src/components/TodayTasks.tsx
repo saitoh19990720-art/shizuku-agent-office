@@ -43,7 +43,7 @@ export function TodayTasks({ tasks, onAdd, onStatus, onRemove }: Props) {
             type="button"
             onClick={() => setFilter(f.key)}
             aria-pressed={filter === f.key}
-            className={`text-xs px-3 py-1 rounded-pill border transition ${
+            className={`pill-btn ${
               filter === f.key
                 ? "bg-primary-deep text-white border-primary-deep"
                 : "border-line text-muted hover:bg-surface-soft"

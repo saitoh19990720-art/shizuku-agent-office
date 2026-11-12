@@ -42,7 +42,7 @@ export function TaskCard({ task, onStatus, onRemove }: Props) {
             type="button"
             onClick={() => onStatus(task.id, s)}
             aria-pressed={task.status === s}
-            className={`text-xs px-2.5 py-1 rounded-pill border transition ${
+            className={`pill-btn ${
               task.status === s
                 ? "bg-primary-deep text-white border-primary-deep"
                 : "border-line text-muted hover:bg-surface-soft"

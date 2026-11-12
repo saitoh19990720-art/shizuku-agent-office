@@ -2,6 +2,8 @@
 
 しずくのための「AI社員オフィス」。AIを魔法でも代替でもなく、**机と仕事と境界線を持った社員チーム**として扱い、**最終判断は人間（監督＝しずく）** が持つための、ローカル完結の1ページ・ダッシュボード。
 
+**公開ページ：** https://saitoh19990720-art.github.io/shizuku-agent-office/
+
 ## 1. 目的
 
 - リモートワーク準備・AI×デザイン制作・個人ブランド構築の「作業デスク」
@@ -25,7 +27,7 @@ npm install
 
 ```bash
 npm run dev      # 開発サーバー（http://localhost:5173）
-npm run build    # 型チェック＋本番ビルド
+npm run build    # 型チェック＋本番ビルド。出力先は docs/（GitHub Pages がここを公開する）
 npm run preview  # ビルド結果を確認
 ```
 
